@@ -1,0 +1,483 @@
+  <!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Salma Silver</title>
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      background: #0f0f12;
+
+      color: white;
+
+      text-align: center;
+
+    }
+
+    .lock {
+
+      position: fixed;
+
+      inset: 0;
+
+      background: #0f0f12;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      z-index: 9999;
+
+      padding: 20px;
+
+    }
+
+    .lock-box {
+
+      width: 100%;
+
+      max-width: 350px;
+
+      padding: 30px 20px;
+
+      border-radius: 20px;
+
+      background: #19191f;
+
+      box-shadow: 0 0 30px rgba(255,255,255,.08);
+
+    }
+
+    .lock-box h1 {
+
+      margin-bottom: 15px;
+
+      font-size: 28px;
+
+    }
+
+    .lock-box p {
+
+      color: #bbb;
+
+      margin-bottom: 20px;
+
+    }
+
+    input {
+
+      width: 100%;
+
+      padding: 14px;
+
+      border: none;
+
+      border-radius: 12px;
+
+      margin-bottom: 12px;
+
+      font-size: 16px;
+
+      text-align: center;
+
+    }
+
+    button {
+
+      border: none;
+
+      padding: 13px 25px;
+
+      border-radius: 12px;
+
+      background: white;
+
+      color: #111;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+    .error {
+
+      color: #ff6b6b;
+
+      margin-top: 10px;
+
+      display: none;
+
+    }
+
+    #site {
+
+      display: none;
+
+    }
+
+    .hero {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 30px 20px;
+
+      background:
+
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.7)),
+
+        url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80")
+
+        center/cover;
+
+    }
+
+    .hero h1 {
+
+      font-size: 48px;
+
+      margin-bottom: 15px;
+
+    }
+
+    .hero p {
+
+      font-size: 20px;
+
+      color: #ddd;
+
+    }
+
+    section {
+
+      padding: 70px 20px;
+
+      max-width: 1000px;
+
+      margin: auto;
+
+    }
+
+    .quote {
+
+      font-size: 28px;
+
+      line-height: 1.8;
+
+      margin-bottom: 25px;
+
+    }
+
+    .message {
+
+      color: #ccc;
+
+      font-size: 18px;
+
+      line-height: 2;
+
+    }
+
+    .gallery {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 15px;
+
+      margin-top: 30px;
+
+    }
+
+    .gallery img {
+
+      width: 100%;
+
+      height: 250px;
+
+      object-fit: cover;
+
+      border-radius: 18px;
+
+    }
+
+    .edit-box {
+
+      margin-top: 40px;
+
+      padding: 25px;
+
+      background: #19191f;
+
+      border-radius: 20px;
+
+    }
+
+    .edit-box input {
+
+      margin-top: 10px;
+
+    }
+
+    footer {
+
+      padding: 40px 20px;
+
+      color: #888;
+
+    }
+
+    @media (max-width: 600px) {
+
+      .hero h1 {
+
+        font-size: 38px;
+
+      }
+
+      .quote {
+
+        font-size: 23px;
+
+      }
+
+      .gallery {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="lock" id="lock">
+
+    <div class="lock-box">
+
+      <h1>Salma Silver 🤍</h1>
+
+      <p>اكتب الباسورد للدخول</p>
+
+      <input
+
+        type="password"
+
+        id="password"
+
+        placeholder="الباسورد"
+
+      >
+
+      <button onclick="unlock()">دخول</button>
+
+      <div class="error" id="error">
+
+        الباسورد غلط ❤️
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="site">
+
+    <div class="hero">
+
+      <h1>Salma Silver</h1>
+
+      <p>في عينيكي لقيت العمر كله 🤍</p>
+
+    </div>
+
+    <section>
+
+      <div class="quote">
+
+        "في عينيكي لقيت العمر كله."
+
+      </div>
+
+      <div class="message">
+
+        يمكن الكلام مش كفاية يوصف اللي جوايا،
+
+        بس وجودك في حياتي خلّى لكل حاجة معنى تاني.
+
+        <br><br>
+
+        كل صورة هنا بتفكرني بلحظة حلوة،
+
+        وكل لحظة معاكي نفسي تفضل مكملة.
+
+        🤍
+
+      </div>
+
+      <div class="gallery">
+
+        <img id="img1"
+
+          src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80">
+
+        <img id="img2"
+
+          src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80">
+
+        <img id="img3"
+
+          src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80">
+
+        <img id="img4"
+
+          src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=80">
+
+      </div>
+
+      <div class="edit-box">
+
+        <h2>تعديل الصور</h2>
+
+        <input id="url1" placeholder="رابط الصورة الأولى">
+
+        <input id="url2" placeholder="رابط الصورة الثانية">
+
+        <input id="url3" placeholder="رابط الصورة الثالثة">
+
+        <input id="url4" placeholder="رابط الصورة الرابعة">
+
+        <button onclick="saveImages()">
+
+          حفظ الصور
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <footer>
+
+      Made with love 🤍
+
+    </footer>
+
+  </div>
+
+  <script>
+
+    function unlock() {
+
+      const password =
+
+        document.getElementById("password").value;
+
+      if (password === "1234") {
+
+        document.getElementById("lock").style.display = "none";
+
+        document.getElementById("site").style.display = "block";
+
+      } else {
+
+        document.getElementById("error").style.display = "block";
+
+      }
+
+    }
+
+    function saveImages() {
+
+      const urls = [
+
+        document.getElementById("url1").value,
+
+        document.getElementById("url2").value,
+
+        document.getElementById("url3").value,
+
+        document.getElementById("url4").value
+
+      ];
+
+      urls.forEach((url, index) => {
+
+        if (url.trim() !== "") {
+
+          document.getElementById("img" + (index + 1)).src = url;
+
+          localStorage.setItem(
+
+            "salmaImg" + (index + 1),
+
+            url
+
+          );
+
+        }
+
+      });
+
+      alert("تم حفظ الصور 🤍");
+
+    }
+
+    window.onload = function () {
+
+      for (let i = 1; i <= 4; i++) {
+
+        const saved =
+
+          localStorage.getItem("salmaImg" + i);
+
+        if (saved) {
+
+          document.getElementById("img" + i).src = saved;
+
+        }
+
+      }
+
+    };
+
+  </script>
+
+</body>
+
+</html>
