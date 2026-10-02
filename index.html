@@ -1,482 +1,942 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Salma Silver</title>
+<title>Salma Silver 🤍</title>
 
-  <style>
+<style>
 
-    * {
+*{
 
-      box-sizing: border-box;
+  box-sizing:border-box;
 
-      margin: 0;
+  margin:0;
 
-      padding: 0;
+  padding:0;
 
-    }
+}
 
-    body {
+html{
 
-      font-family: Arial, sans-serif;
+  scroll-behavior:smooth;
 
-      background: #0f0f12;
+}
 
-      color: white;
+body{
 
-      text-align: center;
+  background:#08080b;
 
-    }
+  color:#fff;
 
-    .lock {
+  font-family:Arial,sans-serif;
 
-      position: fixed;
+  overflow-x:hidden;
 
-      inset: 0;
+}
 
-      background: #0f0f12;
+/* شاشة الدخول */
 
-      display: flex;
+.lock{
 
-      align-items: center;
+  position:fixed;
 
-      justify-content: center;
+  inset:0;
 
-      z-index: 9999;
+  background:linear-gradient(135deg,#08080b,#20131d);
 
-      padding: 20px;
+  display:flex;
 
-    }
+  justify-content:center;
 
-    .lock-box {
+  align-items:center;
 
-      width: 100%;
+  z-index:9999;
 
-      max-width: 350px;
+  padding:20px;
 
-      padding: 30px 20px;
+}
 
-      border-radius: 20px;
+.lock-box{
 
-      background: #19191f;
+  width:100%;
 
-      box-shadow: 0 0 30px rgba(255,255,255,.08);
+  max-width:360px;
 
-    }
+  text-align:center;
 
-    .lock-box h1 {
+  padding:35px 25px;
 
-      margin-bottom: 15px;
+  border-radius:25px;
 
-      font-size: 28px;
+  background:rgba(255,255,255,.08);
 
-    }
+  backdrop-filter:blur(15px);
 
-    .lock-box p {
+  box-shadow:0 0 50px rgba(255,255,255,.08);
 
-      color: #bbb;
+  animation:appear 1s ease;
 
-      margin-bottom: 20px;
+}
 
-    }
+.lock-box h1{
 
-    input {
+  font-size:35px;
 
-      width: 100%;
+  margin-bottom:12px;
 
-      padding: 14px;
+}
 
-      border: none;
+.lock-box p{
 
-      border-radius: 12px;
+  color:#ccc;
 
-      margin-bottom: 12px;
+  margin-bottom:25px;
 
-      font-size: 16px;
+}
 
-      text-align: center;
+.lock-box input{
 
-    }
+  width:100%;
 
-    button {
+  padding:15px;
 
-      border: none;
+  border:0;
 
-      padding: 13px 25px;
+  border-radius:15px;
 
-      border-radius: 12px;
+  text-align:center;
 
-      background: white;
+  font-size:17px;
 
-      color: #111;
+  outline:none;
 
-      font-size: 16px;
+  margin-bottom:12px;
 
-      cursor: pointer;
+}
 
-    }
+button{
 
-    .error {
+  border:0;
 
-      color: #ff6b6b;
+  border-radius:15px;
 
-      margin-top: 10px;
+  padding:14px 25px;
 
-      display: none;
+  font-size:16px;
 
-    }
+  cursor:pointer;
 
-    #site {
+}
 
-      display: none;
+.enter{
 
-    }
+  width:100%;
 
-    .hero {
+  background:white;
 
-      min-height: 100vh;
+  color:#111;
 
-      display: flex;
+}
 
-      flex-direction: column;
+#error{
 
-      justify-content: center;
+  display:none;
 
-      align-items: center;
+  color:#ff7777;
 
-      padding: 30px 20px;
+  margin-top:12px;
 
-      background:
+}
 
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.7)),
+/* الموقع */
 
-        url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80")
+#site{
 
-        center/cover;
+  display:none;
 
-    }
+}
 
-    .hero h1 {
+.hero{
 
-      font-size: 48px;
+  height:100vh;
 
-      margin-bottom: 15px;
+  min-height:650px;
 
-    }
+  display:flex;
 
-    .hero p {
+  flex-direction:column;
 
-      font-size: 20px;
+  justify-content:center;
 
-      color: #ddd;
+  align-items:center;
 
-    }
+  text-align:center;
 
-    section {
+  padding:25px;
 
-      padding: 70px 20px;
+  position:relative;
 
-      max-width: 1000px;
+  overflow:hidden;
 
-      margin: auto;
+  background:
 
-    }
+  linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
 
-    .quote {
+  url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1400&q=85")
 
-      font-size: 28px;
+  center/cover;
 
-      line-height: 1.8;
+}
 
-      margin-bottom: 25px;
+.hero h1{
 
-    }
+  font-size:55px;
 
-    .message {
+  animation:fadeUp 1.5s ease;
 
-      color: #ccc;
+  text-shadow:0 5px 25px #000;
 
-      font-size: 18px;
+}
 
-      line-height: 2;
+.hero p{
 
-    }
+  font-size:21px;
 
-    .gallery {
+  margin-top:15px;
 
-      display: grid;
+  animation:fadeUp 2s ease;
 
-      grid-template-columns: repeat(2, 1fr);
+}
 
-      gap: 15px;
+.scroll{
 
-      margin-top: 30px;
+  position:absolute;
 
-    }
+  bottom:30px;
 
-    .gallery img {
+  animation:bounce 1.5s infinite;
 
-      width: 100%;
+  color:#ddd;
 
-      height: 250px;
+}
 
-      object-fit: cover;
+/* القلوب */
 
-      border-radius: 18px;
+.heart{
 
-    }
+  position:fixed;
 
-    .edit-box {
+  bottom:-30px;
 
-      margin-top: 40px;
+  font-size:20px;
 
-      padding: 25px;
+  animation:heartUp linear forwards;
 
-      background: #19191f;
+  pointer-events:none;
 
-      border-radius: 20px;
+  z-index:10;
 
-    }
+}
 
-    .edit-box input {
+/* الأقسام */
 
-      margin-top: 10px;
+section{
 
-    }
+  max-width:1000px;
 
-    footer {
+  margin:auto;
 
-      padding: 40px 20px;
+  padding:90px 20px;
 
-      color: #888;
+  text-align:center;
 
-    }
+}
 
-    @media (max-width: 600px) {
+.title{
 
-      .hero h1 {
+  font-size:32px;
 
-        font-size: 38px;
+  margin-bottom:30px;
 
-      }
+  opacity:0;
 
-      .quote {
+  transform:translateY(40px);
 
-        font-size: 23px;
+  transition:1s;
 
-      }
+}
 
-      .gallery {
+.title.show{
 
-        grid-template-columns: 1fr;
+  opacity:1;
 
-      }
+  transform:translateY(0);
 
-    }
+}
 
-  </style>
+.quote{
+
+  font-size:29px;
+
+  line-height:1.8;
+
+  margin-bottom:25px;
+
+}
+
+.message{
+
+  font-size:18px;
+
+  color:#ccc;
+
+  line-height:2;
+
+}
+
+/* الصور */
+
+.gallery{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:16px;
+
+  margin-top:45px;
+
+}
+
+.gallery img{
+
+  width:100%;
+
+  height:300px;
+
+  object-fit:cover;
+
+  border-radius:22px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+  transition:.5s;
+
+}
+
+.gallery img:hover{
+
+  transform:scale(1.03);
+
+}
+
+/* التعديل */
+
+.edit-box{
+
+  margin-top:70px;
+
+  padding:25px;
+
+  border-radius:25px;
+
+  background:#15151b;
+
+}
+
+.edit-box h2{
+
+  margin-bottom:20px;
+
+}
+
+.edit-box input{
+
+  width:100%;
+
+  padding:13px;
+
+  border:0;
+
+  border-radius:12px;
+
+  margin:7px 0;
+
+  text-align:center;
+
+}
+
+.edit-box button{
+
+  margin-top:10px;
+
+  background:white;
+
+}
+
+.song-box{
+
+  margin-top:25px;
+
+  padding-top:25px;
+
+  border-top:1px solid #333;
+
+}
+
+.song-box input{
+
+  background:#fff;
+
+}
+
+audio{
+
+  width:100%;
+
+  margin-top:15px;
+
+}
+
+footer{
+
+  text-align:center;
+
+  padding:50px 20px;
+
+  color:#777;
+
+}
+
+/* الحركات */
+
+@keyframes appear{
+
+  from{
+
+    opacity:0;
+
+    transform:scale(.8);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:scale(1);
+
+  }
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+@keyframes bounce{
+
+  0%,100%{transform:translateY(0)}
+
+  50%{transform:translateY(12px)}
+
+}
+
+@keyframes heartUp{
+
+  from{
+
+    transform:translateY(0) rotate(0);
+
+    opacity:1;
+
+  }
+
+  to{
+
+    transform:translateY(-110vh) rotate(30deg);
+
+    opacity:0;
+
+  }
+
+}
+
+@media(max-width:600px){
+
+  .hero h1{
+
+    font-size:42px;
+
+  }
+
+  .quote{
+
+    font-size:24px;
+
+  }
+
+  .gallery{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .gallery img{
+
+    height:350px;
+
+  }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <div class="lock" id="lock">
+<!-- الدخول -->
 
-    <div class="lock-box">
+<div class="lock" id="lock">
 
-      <h1>Salma Silver 🤍</h1>
+  <div class="lock-box">
 
-      <p>اكتب الباسورد للدخول</p>
+    <h1>Salma Silver 🤍</h1>
+
+    <p>اكتب الباسورد عشان تدخل</p>
+
+    <input
+
+      type="password"
+
+      id="password"
+
+      placeholder="الباسورد"
+
+    >
+
+    <button class="enter" onclick="unlock()">
+
+      دخول 🤍
+
+    </button>
+
+    <div id="error">
+
+      الباسورد غلط ❤️
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- الموقع -->
+
+<div id="site">
+
+  <div class="hero">
+
+    <h1>Salma Silver</h1>
+
+    <p>
+
+      في عينيكي لقيت العمر كله 🤍
+
+    </p>
+
+    <div class="scroll">
+
+      ↓ انزل لتحت ↓
+
+    </div>
+
+  </div>
+
+  <section>
+
+    <h2 class="title">
+
+      حكايتنا 🤍
+
+    </h2>
+
+    <div class="quote">
+
+      "في عينيكي لقيت العمر كله."
+
+    </div>
+
+    <div class="message">
+
+      يمكن الكلام مش كفاية يوصف اللي جوايا،
+
+      <br>
+
+      بس وجودك في حياتي خلّى لكل حاجة معنى تاني.
+
+      <br><br>
+
+      كل صورة هنا بتفكرني بلحظة حلوة،
+
+      وكل لحظة معاكي نفسي تفضل مكملة.
+
+      <br><br>
+
+      ربنا يخليكي ليا دايمًا 🤍
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2 class="title">
+
+      ذكرياتنا 📸
+
+    </h2>
+
+    <div class="gallery">
+
+      <img id="img1"
+
+      src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=85">
+
+      <img id="img2"
+
+      src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85">
+
+      <img id="img3"
+
+      src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85">
+
+      <img id="img4"
+
+      src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=85">
+
+    </div>
+
+  </section>
+
+  <!-- التعديل -->
+
+  <section>
+
+    <div class="edit-box">
+
+      <h2>
+
+        تعديل الموقع ⚙️
+
+      </h2>
+
+      <p style="color:#aaa;margin-bottom:20px">
+
+        تقدر تغيّر الصور والأغنية من هنا
+
+      </p>
 
       <input
 
-        type="password"
+        id="url1"
 
-        id="password"
-
-        placeholder="الباسورد"
+        placeholder="رابط الصورة الأولى"
 
       >
 
-      <button onclick="unlock()">دخول</button>
+      <input
 
-      <div class="error" id="error">
+        id="url2"
 
-        الباسورد غلط ❤️
+        placeholder="رابط الصورة الثانية"
+
+      >
+
+      <input
+
+        id="url3"
+
+        placeholder="رابط الصورة الثالثة"
+
+      >
+
+      <input
+
+        id="url4"
+
+        placeholder="رابط الصورة الرابعة"
+
+      >
+
+      <button onclick="saveImages()">
+
+        حفظ الصور 📸
+
+      </button>
+
+      <div class="song-box">
+
+        <h3>
+
+          🎵 تغيير الأغنية
+
+        </h3>
+
+        <p style="color:#aaa;margin:10px 0 15px">
+
+          اختار أغنية من الآيفون
+
+        </p>
+
+        <input
+
+          type="file"
+
+          id="songFile"
+
+          accept="audio/*"
+
+          onchange="changeSong(event)"
+
+        >
+
+        <audio
+
+          id="audio"
+
+          controls
+
+        ></audio>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-  <div id="site">
+  <footer>
 
-    <div class="hero">
+    Made with love 🤍
 
-      <h1>Salma Silver</h1>
+  </footer>
 
-      <p>في عينيكي لقيت العمر كله 🤍</p>
+</div>
 
-    </div>
+<script>
 
-    <section>
+/* الدخول */
 
-      <div class="quote">
+function unlock(){
 
-        "في عينيكي لقيت العمر كله."
+  const password =
 
-      </div>
+    document.getElementById("password").value;
 
-      <div class="message">
+  if(password === "1234"){
 
-        يمكن الكلام مش كفاية يوصف اللي جوايا،
+    document.getElementById("lock").style.display="none";
 
-        بس وجودك في حياتي خلّى لكل حاجة معنى تاني.
+    document.getElementById("site").style.display="block";
 
-        <br><br>
+    startHearts();
 
-        كل صورة هنا بتفكرني بلحظة حلوة،
+  }else{
 
-        وكل لحظة معاكي نفسي تفضل مكملة.
+    document.getElementById("error").style.display="block";
 
-        🤍
+  }
 
-      </div>
+}
 
-      <div class="gallery">
+/* الصور */
 
-        <img id="img1"
+function saveImages(){
 
-          src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80">
+  for(let i=1;i<=4;i++){
 
-        <img id="img2"
+    const input =
 
-          src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80">
+      document.getElementById("url"+i);
 
-        <img id="img3"
+    const img =
 
-          src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80">
+      document.getElementById("img"+i);
 
-        <img id="img4"
+    if(input.value.trim() !== ""){
 
-          src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=80">
+      img.src=input.value;
 
-      </div>
+      localStorage.setItem(
 
-      <div class="edit-box">
+        "salmaImg"+i,
 
-        <h2>تعديل الصور</h2>
+        input.value
 
-        <input id="url1" placeholder="رابط الصورة الأولى">
-
-        <input id="url2" placeholder="رابط الصورة الثانية">
-
-        <input id="url3" placeholder="رابط الصورة الثالثة">
-
-        <input id="url4" placeholder="رابط الصورة الرابعة">
-
-        <button onclick="saveImages()">
-
-          حفظ الصور
-
-        </button>
-
-      </div>
-
-    </section>
-
-    <footer>
-
-      Made with love 🤍
-
-    </footer>
-
-  </div>
-
-  <script>
-
-    function unlock() {
-
-      const password =
-
-        document.getElementById("password").value;
-
-      if (password === "1234") {
-
-        document.getElementById("lock").style.display = "none";
-
-        document.getElementById("site").style.display = "block";
-
-      } else {
-
-        document.getElementById("error").style.display = "block";
-
-      }
+      );
 
     }
 
-    function saveImages() {
+  }
 
-      const urls = [
+  alert("تم حفظ الصور 🤍");
 
-        document.getElementById("url1").value,
+}
 
-        document.getElementById("url2").value,
+/* تحميل الصور المحفوظة */
 
-        document.getElementById("url3").value,
+window.onload=function(){
 
-        document.getElementById("url4").value
+  for(let i=1;i<=4;i++){
 
-      ];
+    const saved =
 
-      urls.forEach((url, index) => {
+      localStorage.getItem("salmaImg"+i);
 
-        if (url.trim() !== "") {
+    if(saved){
 
-          document.getElementById("img" + (index + 1)).src = url;
+      document.getElementById("img"+i).src=saved;
 
-          localStorage.setItem(
-
-            "salmaImg" + (index + 1),
-
-            url
-
-          );
-
-        }
-
-      });
-
-      alert("تم حفظ الصور 🤍");
+      document.getElementById("url"+i).value=saved;
 
     }
 
-    window.onload = function () {
+  }
 
-      for (let i = 1; i <= 4; i++) {
+  const savedSong =
 
-        const saved =
+    localStorage.getItem("salmaSong");
 
-          localStorage.getItem("salmaImg" + i);
+  if(savedSong){
 
-        if (saved) {
+    document.getElementById("audio").src=savedSong;
 
-          document.getElementById("img" + i).src = saved;
+  }
 
-        }
+};
+
+/* تغيير الأغنية */
+
+function changeSong(event){
+
+  const file =
+
+    event.target.files[0];
+
+  if(!file) return;
+
+  const url =
+
+    URL.createObjectURL(file);
+
+  const audio =
+
+    document.getElementById("audio");
+
+  audio.src=url;
+
+  audio.play();
+
+  /*
+
+  ملاحظة:
+
+  نحفظ رابط الأغنية داخل المتصفح.
+
+  */
+
+  localStorage.setItem("salmaSong",url);
+
+}
+
+/* القلوب */
+
+function createHeart(){
+
+  const heart =
+
+    document.createElement("div");
+
+  heart.className="heart";
+
+  heart.innerHTML=
+
+    Math.random()>.5 ? "🤍" : "❤️";
+
+  heart.style.left=
+
+    Math.random()*100+"vw";
+
+  heart.style.animationDuration=
+
+    (4+Math.random()*5)+"s";
+
+  heart.style.fontSize=
+
+    (15+Math.random()*20)+"px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+
+    heart.remove();
+
+  },9000);
+
+}
+
+function startHearts(){
+
+  setInterval(createHeart,700);
+
+}
+
+/* ظهور العناوين */
+
+const observer =
+
+  new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
 
       }
 
-    };
+    });
 
-  </script>
+  });
+
+document.querySelectorAll(".title")
+
+.forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 
