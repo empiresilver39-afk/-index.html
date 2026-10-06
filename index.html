@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
@@ -13,405 +12,204 @@
 <style>
 
 *{
-
   box-sizing:border-box;
-
   margin:0;
-
   padding:0;
-
 }
 
 html{
-
   scroll-behavior:smooth;
-
 }
 
 body{
-
   background:#08080b;
-
   color:#fff;
-
   font-family:Arial,sans-serif;
-
   overflow-x:hidden;
-
 }
 
 /* شاشة الدخول */
 
 .lock{
-
   position:fixed;
-
   inset:0;
-
   background:linear-gradient(135deg,#08080b,#20131d);
-
   display:flex;
-
   justify-content:center;
-
   align-items:center;
-
   z-index:9999;
-
   padding:20px;
-
 }
 
 .lock-box{
-
   width:100%;
-
   max-width:360px;
-
   text-align:center;
-
   padding:35px 25px;
-
   border-radius:25px;
-
   background:rgba(255,255,255,.08);
-
   backdrop-filter:blur(15px);
-
   box-shadow:0 0 50px rgba(255,255,255,.08);
-
   animation:appear 1s ease;
-
 }
 
 .lock-box h1{
-
   font-size:35px;
-
   margin-bottom:12px;
-
 }
 
 .lock-box p{
-
   color:#ccc;
-
   margin-bottom:25px;
-
 }
 
 .lock-box input{
-
   width:100%;
-
   padding:15px;
-
   border:0;
-
   border-radius:15px;
-
   text-align:center;
-
   font-size:17px;
-
   outline:none;
-
   margin-bottom:12px;
-
 }
 
 button{
-
   border:0;
-
   border-radius:15px;
-
   padding:14px 25px;
-
   font-size:16px;
-
   cursor:pointer;
-
 }
 
 .enter{
-
   width:100%;
-
   background:white;
-
   color:#111;
-
 }
 
 #error{
-
   display:none;
-
   color:#ff7777;
-
   margin-top:12px;
-
 }
 
 /* الموقع */
 
 #site{
-
   display:none;
-
 }
 
 .hero{
-
   height:100vh;
-
   min-height:650px;
-
   display:flex;
-
   flex-direction:column;
-
   justify-content:center;
-
   align-items:center;
-
   text-align:center;
-
   padding:25px;
-
   position:relative;
-
   overflow:hidden;
 
   background:
-
   linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
-
-  url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1400&q=85")
-
+  url("https://i.ibb.co/YTjX6DCr/IMG-6434.jpg")
   center/cover;
-
 }
 
 .hero h1{
-
   font-size:55px;
-
   animation:fadeUp 1.5s ease;
-
   text-shadow:0 5px 25px #000;
-
 }
 
 .hero p{
-
   font-size:21px;
-
   margin-top:15px;
-
   animation:fadeUp 2s ease;
-
 }
 
 .scroll{
-
   position:absolute;
-
   bottom:30px;
-
   animation:bounce 1.5s infinite;
-
   color:#ddd;
-
 }
 
 /* القلوب */
 
 .heart{
-
   position:fixed;
-
   bottom:-30px;
-
   font-size:20px;
-
   animation:heartUp linear forwards;
-
   pointer-events:none;
-
   z-index:10;
-
 }
 
 /* الأقسام */
 
 section{
-
   max-width:1000px;
-
   margin:auto;
-
   padding:90px 20px;
-
   text-align:center;
-
 }
 
 .title{
-
   font-size:32px;
-
   margin-bottom:30px;
-
   opacity:0;
-
   transform:translateY(40px);
-
   transition:1s;
-
 }
 
 .title.show{
-
   opacity:1;
-
   transform:translateY(0);
-
 }
 
 .quote{
-
   font-size:29px;
-
   line-height:1.8;
-
   margin-bottom:25px;
-
 }
 
 .message{
-
   font-size:18px;
-
   color:#ccc;
-
   line-height:2;
-
 }
 
 /* الصور */
 
 .gallery{
-
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:16px;
-
   margin-top:45px;
-
 }
 
 .gallery img{
-
   width:100%;
-
   height:300px;
-
   object-fit:cover;
-
   border-radius:22px;
-
   box-shadow:0 10px 30px rgba(0,0,0,.5);
-
   transition:.5s;
-
 }
 
 .gallery img:hover{
-
   transform:scale(1.03);
-
 }
 
-/* التعديل */
-
-.edit-box{
-
-  margin-top:70px;
-
-  padding:25px;
-
-  border-radius:25px;
-
-  background:#15151b;
-
-}
-
-.edit-box h2{
-
-  margin-bottom:20px;
-
-}
-
-.edit-box input{
-
-  width:100%;
-
-  padding:13px;
-
-  border:0;
-
-  border-radius:12px;
-
-  margin:7px 0;
-
-  text-align:center;
-
-}
-
-.edit-box button{
-
-  margin-top:10px;
-
-  background:white;
-
-}
-
-.song-box{
-
-  margin-top:25px;
-
-  padding-top:25px;
-
-  border-top:1px solid #333;
-
-}
-
-.song-box input{
-
-  background:#fff;
-
-}
-
-audio{
-
-  width:100%;
-
-  margin-top:15px;
-
-}
+/* الفوتر */
 
 footer{
-
   text-align:center;
-
   padding:50px 20px;
-
   color:#777;
-
 }
 
 /* الحركات */
@@ -419,19 +217,13 @@ footer{
 @keyframes appear{
 
   from{
-
     opacity:0;
-
     transform:scale(.8);
-
   }
 
   to{
-
     opacity:1;
-
     transform:scale(1);
-
   }
 
 }
@@ -439,75 +231,61 @@ footer{
 @keyframes fadeUp{
 
   from{
-
     opacity:0;
-
     transform:translateY(40px);
-
   }
 
   to{
-
     opacity:1;
-
     transform:translateY(0);
-
   }
 
 }
 
 @keyframes bounce{
 
-  0%,100%{transform:translateY(0)}
+  0%,100%{
+    transform:translateY(0)
+  }
 
-  50%{transform:translateY(12px)}
+  50%{
+    transform:translateY(12px)
+  }
 
 }
 
 @keyframes heartUp{
 
   from{
-
     transform:translateY(0) rotate(0);
-
     opacity:1;
-
   }
 
   to{
-
     transform:translateY(-110vh) rotate(30deg);
-
     opacity:0;
-
   }
 
 }
 
+/* الموبايل */
+
 @media(max-width:600px){
 
   .hero h1{
-
     font-size:42px;
-
   }
 
   .quote{
-
     font-size:24px;
-
   }
 
   .gallery{
-
     grid-template-columns:1fr;
-
   }
 
   .gallery img{
-
     height:350px;
-
   }
 
 }
@@ -518,76 +296,77 @@ footer{
 
 <body>
 
-<!-- الدخول -->
+
+<!-- شاشة الدخول -->
 
 <div class="lock" id="lock">
 
   <div class="lock-box">
 
-    <h1>Salma Silver 🤍</h1>
+    <h1>
+      Salma Silver 🤍
+    </h1>
 
-    <p>اكتب الباسورد عشان تدخل</p>
+    <p>
+      اكتب الباسورد عشان تدخل
+    </p>
 
     <input
-
       type="password"
-
       id="password"
-
       placeholder="الباسورد"
-
     >
 
-    <button class="enter" onclick="unlock()">
-
+    <button
+      class="enter"
+      onclick="unlock()"
+    >
       دخول 🤍
-
     </button>
 
     <div id="error">
-
       الباسورد غلط ❤️
-
     </div>
 
   </div>
 
 </div>
 
+
 <!-- الموقع -->
 
 <div id="site">
 
+
+  <!-- الصفحة الرئيسية -->
+
   <div class="hero">
 
-    <h1>Salma Silver</h1>
+    <h1>
+      Salma Silver
+    </h1>
 
     <p>
-
       في عينيكي لقيت العمر كله 🤍
-
     </p>
 
     <div class="scroll">
-
       ↓ انزل لتحت ↓
-
     </div>
 
   </div>
 
+
+  <!-- حكايتنا -->
+
   <section>
 
     <h2 class="title">
-
       حكايتنا 🤍
-
     </h2>
 
     <div class="quote">
-
       "في عينيكي لقيت العمر كله."
-
     </div>
 
     <div class="message">
@@ -612,131 +391,57 @@ footer{
 
   </section>
 
+
+  <!-- الصور -->
+
   <section>
 
     <h2 class="title">
-
       ذكرياتنا 📸
-
     </h2>
 
     <div class="gallery">
 
-      <img id="img1"
 
-      src="https://i.ibb.co/YTjX6DCr/IMG-6434.jpg">
+      <!-- الصورة الأولى -->
 
-      <img id="img2"
+      <img
+        id="img1"
+        src="https://i.ibb.co/YTjX6DCr/IMG-6434.jpg"
+        alt="صورة 1"
+      >
 
-      src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85">
 
-      <img id="img3"
+      <!-- الصورة الثانية -->
 
-      src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85">
+      <img
+        id="img2"
+        src="https://i.ibb.co/SDXX3h21/IMG-6433.jpg"
+        alt="صورة 2"
+      >
 
-      <img id="img4"
 
-      src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=85">
+      <!-- الصورة الثالثة -->
+
+      <img
+        id="img3"
+        src="https://i.ibb.co/FkZMVnqh/IMG-6435.jpg"
+        alt="صورة 3"
+      >
+
+
+      <!-- الصورة الرابعة -->
+
+      <img
+        id="img4"
+        src="https://i.ibb.co/HfWsyYWQ/IMG-6436.jpg"
+        alt="صورة 4"
+      >
 
     </div>
 
   </section>
 
-  <!-- التعديل -->
-
-  <section>
-
-    <div class="edit-box">
-
-      <h2>
-
-        تعديل الموقع ⚙️
-
-      </h2>
-
-      <p style="color:#aaa;margin-bottom:20px">
-
-        تقدر تغيّر الصور والأغنية من هنا
-
-      </p>
-
-      <input
-
-        id="url1"
-
-        placeholder="رابط الصورة الأولى"
-
-      >
-
-      <input
-
-        id="url2"
-
-        placeholder="رابط الصورة الثانية"
-
-      >
-
-      <input
-
-        id="url3"
-
-        placeholder="رابط الصورة الثالثة"
-
-      >
-
-      <input
-
-        id="url4"
-
-        placeholder="رابط الصورة الرابعة"
-
-      >
-
-      <button onclick="saveImages()">
-
-        حفظ الصور 📸
-
-      </button>
-
-      <div class="song-box">
-
-        <h3>
-
-          🎵 تغيير الأغنية
-
-        </h3>
-
-        <p style="color:#aaa;margin:10px 0 15px">
-
-          اختار أغنية من الآيفون
-
-        </p>
-
-        <input
-
-          type="file"
-
-          id="songFile"
-
-          accept="audio/*"
-
-          onchange="changeSong(event)"
-
-        >
-
-        <audio
-
-          id="audio"
-
-          controls
-
-        ></audio>
-
-      </div>
-
-    </div>
-
-  </section>
 
   <footer>
 
@@ -744,17 +449,20 @@ footer{
 
   </footer>
 
+
 </div>
+
 
 <script>
 
-/* الدخول */
+
+/* الباسورد */
 
 function unlock(){
 
   const password =
-
     document.getElementById("password").value;
+
 
   if(password === "1234"){
 
@@ -764,7 +472,9 @@ function unlock(){
 
     startHearts();
 
-  }else{
+  }
+
+  else{
 
     document.getElementById("error").style.display="block";
 
@@ -772,133 +482,32 @@ function unlock(){
 
 }
 
-/* الصور */
-
-function saveImages(){
-
-  for(let i=1;i<=4;i++){
-
-    const input =
-
-      document.getElementById("url"+i);
-
-    const img =
-
-      document.getElementById("img"+i);
-
-    if(input.value.trim() !== ""){
-
-      img.src=input.value;
-
-      localStorage.setItem(
-
-        "salmaImg"+i,
-
-        input.value
-
-      );
-
-    }
-
-  }
-
-  alert("تم حفظ الصور 🤍");
-
-}
-
-/* تحميل الصور المحفوظة */
-
-window.onload=function(){
-
-  for(let i=1;i<=4;i++){
-
-    const saved =
-
-      localStorage.getItem("salmaImg"+i);
-
-    if(saved){
-
-      document.getElementById("img"+i).src=saved;
-
-      document.getElementById("url"+i).value=saved;
-
-    }
-
-  }
-
-  const savedSong =
-
-    localStorage.getItem("salmaSong");
-
-  if(savedSong){
-
-    document.getElementById("audio").src=savedSong;
-
-  }
-
-};
-
-/* تغيير الأغنية */
-
-function changeSong(event){
-
-  const file =
-
-    event.target.files[0];
-
-  if(!file) return;
-
-  const url =
-
-    URL.createObjectURL(file);
-
-  const audio =
-
-    document.getElementById("audio");
-
-  audio.src=url;
-
-  audio.play();
-
-  /*
-
-  ملاحظة:
-
-  نحفظ رابط الأغنية داخل المتصفح.
-
-  */
-
-  localStorage.setItem("salmaSong",url);
-
-}
 
 /* القلوب */
 
 function createHeart(){
 
   const heart =
-
     document.createElement("div");
 
   heart.className="heart";
 
-  heart.innerHTML=
+  heart.innerHTML =
+    Math.random() > .5
+    ? "🤍"
+    : "❤️";
 
-    Math.random()>.5 ? "🤍" : "❤️";
-
-  heart.style.left=
-
+  heart.style.left =
     Math.random()*100+"vw";
 
-  heart.style.animationDuration=
-
+  heart.style.animationDuration =
     (4+Math.random()*5)+"s";
 
-  heart.style.fontSize=
-
+  heart.style.fontSize =
     (15+Math.random()*20)+"px";
 
   document.body.appendChild(heart);
+
 
   setTimeout(()=>{
 
@@ -908,16 +517,17 @@ function createHeart(){
 
 }
 
+
 function startHearts(){
 
   setInterval(createHeart,700);
 
 }
 
+
 /* ظهور العناوين */
 
 const observer =
-
   new IntersectionObserver((entries)=>{
 
     entries.forEach(entry=>{
@@ -932,9 +542,11 @@ const observer =
 
   });
 
-document.querySelectorAll(".title")
 
-.forEach(el=>observer.observe(el));
+document
+  .querySelectorAll(".title")
+  .forEach(el=>observer.observe(el));
+
 
 </script>
 
