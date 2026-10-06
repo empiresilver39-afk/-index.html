@@ -1,555 +1,489 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>خليني ذكرى جميلة عندك ❤️</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<title>Salma Silver 🤍</title>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+    }
 
-<style>
+    /* شاشة الباسورد */
+    #lock {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #120008, #3b001b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    .login-box {
+      width: 100%;
+      max-width: 380px;
+      background: rgba(255,255,255,0.08);
+      padding: 30px 22px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(255,0,100,0.25);
+      backdrop-filter: blur(10px);
+    }
 
-html{
-  scroll-behavior:smooth;
-}
+    .login-box h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-body{
-  background:#08080b;
-  color:#fff;
-  font-family:Arial,sans-serif;
-  overflow-x:hidden;
-}
+    .login-box p {
+      color: #ddd;
+      margin-bottom: 25px;
+    }
 
-/* شاشة الدخول */
+    input {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      outline: none;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
 
-.lock{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(135deg,#08080b,#20131d);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-  padding:20px;
-}
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 15px;
+      background: #ff2d75;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
 
-.lock-box{
-  width:100%;
-  max-width:360px;
-  text-align:center;
-  padding:35px 25px;
-  border-radius:25px;
-  background:rgba(255,255,255,.08);
-  backdrop-filter:blur(15px);
-  box-shadow:0 0 50px rgba(255,255,255,.08);
-  animation:appear 1s ease;
-}
+    button:hover {
+      background: #ff0f61;
+    }
 
-.lock-box h1{
-  font-size:35px;
-  margin-bottom:12px;
-}
+    /* الموقع */
+    #site {
+      display: none;
+    }
 
-.lock-box p{
-  color:#ccc;
-  margin-bottom:25px;
-}
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)),
+        url("https://i.ibb.co/YTjX6DCr/IMG-6434.jpg")
+        center/cover no-repeat;
+    }
 
-.lock-box input{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:15px;
-  text-align:center;
-  font-size:17px;
-  outline:none;
-  margin-bottom:12px;
-}
+    .hero-content {
+      padding: 25px;
+      max-width: 700px;
+    }
 
-button{
-  border:0;
-  border-radius:15px;
-  padding:14px 25px;
-  font-size:16px;
-  cursor:pointer;
-}
+    .hero h1 {
+      font-size: 45px;
+      margin: 0 0 15px;
+      text-shadow: 0 5px 20px #000;
+    }
 
-.enter{
-  width:100%;
-  background:white;
-  color:#111;
-}
+    .hero p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #eee;
+    }
 
-#error{
-  display:none;
-  color:#ff7777;
-  margin-top:12px;
-}
+    .heart {
+      font-size: 55px;
+      animation: beat 1.2s infinite;
+    }
 
-/* الموقع */
+    @keyframes beat {
+      0%,100% {
+        transform: scale(1);
+      }
 
-#site{
-  display:none;
-}
+      50% {
+        transform: scale(1.2);
+      }
+    }
 
-.hero{
-  height:100vh;
-  min-height:650px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:25px;
-  position:relative;
-  overflow:hidden;
+    section {
+      padding: 60px 20px;
+    }
 
-  background:
-  linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
-  url("https://i.ibb.co/YTjX6DCr/IMG-6434.jpg")
-  center/cover;
-}
+    .story {
+      max-width: 800px;
+      margin: auto;
+    }
 
-.hero h1{
-  font-size:55px;
-  animation:fadeUp 1.5s ease;
-  text-shadow:0 5px 25px #000;
-}
+    .story h2 {
+      font-size: 32px;
+      color: #ff5b93;
+      margin-bottom: 25px;
+    }
 
-.hero p{
-  font-size:21px;
-  margin-top:15px;
-  animation:fadeUp 2s ease;
-}
+    .story p {
+      font-size: 19px;
+      line-height: 2;
+      color: #ddd;
+    }
 
-.scroll{
-  position:absolute;
-  bottom:30px;
-  animation:bounce 1.5s infinite;
-  color:#ddd;
-}
+    /* الصور */
+    .gallery {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
 
-/* القلوب */
+    .gallery img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.5);
+      transition: .3s;
+    }
 
-.heart{
-  position:fixed;
-  bottom:-30px;
-  font-size:20px;
-  animation:heartUp linear forwards;
-  pointer-events:none;
-  z-index:10;
-}
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
 
-/* الأقسام */
+    .message {
+      max-width: 750px;
+      margin: auto;
+      font-size: 22px;
+      line-height: 2;
+      color: #f4f4f4;
+    }
 
-section{
-  max-width:1000px;
-  margin:auto;
-  padding:90px 20px;
-  text-align:center;
-}
+    footer {
+      padding: 35px 20px;
+      color: #aaa;
+      background: #080808;
+    }
 
-.title{
-  font-size:32px;
-  margin-bottom:30px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-}
+    /* القلوب */
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      color: #ff2d75;
+      font-size: 20px;
+      animation: floatUp 6s linear forwards;
+      pointer-events: none;
+      z-index: 10;
+    }
 
-.title.show{
-  opacity:1;
-  transform:translateY(0);
-}
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
 
-.quote{
-  font-size:29px;
-  line-height:1.8;
-  margin-bottom:25px;
-}
+      100% {
+        transform: translateY(-110vh) scale(1.8);
+        opacity: 0;
+      }
+    }
 
-.message{
-  font-size:18px;
-  color:#ccc;
-  line-height:2;
-}
+    /* الموبايل */
+    @media (max-width: 600px) {
 
-/* الصور */
+      .hero h1 {
+        font-size: 32px;
+      }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-  margin-top:45px;
-}
+      .hero p {
+        font-size: 17px;
+      }
 
-.gallery img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  border-radius:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-  transition:.5s;
-}
+      .gallery {
+        grid-template-columns: 1fr;
+      }
 
-.gallery img:hover{
-  transform:scale(1.03);
-}
+      .gallery img {
+        height: 430px;
+      }
 
-/* الفوتر */
-
-footer{
-  text-align:center;
-  padding:50px 20px;
-  color:#777;
-}
-
-/* الحركات */
-
-@keyframes appear{
-
-  from{
-    opacity:0;
-    transform:scale(.8);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-
-}
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-@keyframes bounce{
-
-  0%,100%{
-    transform:translateY(0)
-  }
-
-  50%{
-    transform:translateY(12px)
-  }
-
-}
-
-@keyframes heartUp{
-
-  from{
-    transform:translateY(0) rotate(0);
-    opacity:1;
-  }
-
-  to{
-    transform:translateY(-110vh) rotate(30deg);
-    opacity:0;
-  }
-
-}
-
-/* الموبايل */
-
-@media(max-width:600px){
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .quote{
-    font-size:24px;
-  }
-
-  .gallery{
-    grid-template-columns:1fr;
-  }
-
-  .gallery img{
-    height:350px;
-  }
-
-}
-
-</style>
-
+      .story p,
+      .message {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- شاشة الباسورد -->
+  <div id="lock">
 
-<!-- شاشة الدخول -->
+    <div class="login-box">
 
-<div class="lock" id="lock">
+      <div class="heart">❤️</div>
 
-  <div class="lock-box">
+      <h1>مكان خاص لينا</h1>
 
-    <h1>
-      Salma Silver 🤍
-    </h1>
+      <p>
+        اكتب الباسورد عشان تدخل الذكرى ❤️
+      </p>
 
-    <p>
-      اكتب الباسورد عشان تدخل
-    </p>
+      <input
+        type="password"
+        id="password"
+        placeholder="اكتب الباسورد"
+      >
 
-    <input
-      type="password"
-      id="password"
-      placeholder="الباسورد"
-    >
+      <button onclick="unlock()">
+        دخول ❤️
+      </button>
 
-    <button
-      class="enter"
-      onclick="unlock()"
-    >
-      دخول 🤍
-    </button>
-
-    <div id="error">
-      الباسورد غلط ❤️
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- الموقع -->
-
-<div id="site">
-
-
-  <!-- الصفحة الرئيسية -->
-
-  <div class="hero">
-
-    <h1>
-      Salma Silver
-    </h1>
-
-    <p>
-      في عينيكي لقيت العمر كله 🤍
-    </p>
-
-    <div class="scroll">
-      ↓ انزل لتحت ↓
     </div>
 
   </div>
 
 
-  <!-- حكايتنا -->
+  <!-- الموقع -->
+  <div id="site">
 
-  <section>
+    <!-- الأغنية -->
+    <audio id="music" loop>
+      <source
+        src="https://raw.githubusercontent.com/empiresilver39-afk/-/refs/heads/main/12.Khaleny_Zekra%202.mp3"
+        type="audio/mpeg"
+      >
+    </audio>
 
-    <h2 class="title">
-      حكايتنا 🤍
-    </h2>
 
-    <div class="quote">
-      "في عينيكي لقيت العمر كله."
-    </div>
+    <!-- البداية -->
+    <section class="hero">
 
-    <div class="message">
+      <div class="hero-content">
 
-      يمكن الكلام مش كفاية يوصف اللي جوايا،
+        <div class="heart">❤️</div>
 
+        <h1>
+          خليني ذكرى جميلة عندك
+        </h1>
+
+        <p>
+          يمكن الأيام تتغير...
+          ويمكن كل حاجة تتبدل،
+          بس نفسي أفضل ذكرى حلوة
+          في قلبك مهما حصل.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- الحكاية -->
+    <section>
+
+      <div class="story">
+
+        <h2>
+          حكايتنا ❤️
+        </h2>
+
+        <p>
+          في حاجات في حياتنا مبتتخططش...
+          بتحصل فجأة، وتدخل القلب من غير استئذان.
+          <br><br>
+
+          ويمكن أجمل حاجة حصلتلي
+          إني عرفتِك، وعشت معاكي لحظات
+          أتمنى أفضل فاكرها طول عمري.
+          <br><br>
+
+          ولو في يوم الدنيا أخدت كل واحد في طريق،
+          أتمنى لما تفتكريني،
+          تفتكريني بابتسامة...
+          مش بحزن.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- الصور -->
+    <section>
+
+      <div class="story">
+
+        <h2>
+          ذكرياتنا 📸❤️
+        </h2>
+
+      </div>
+
+      <div class="gallery">
+
+        <img
+          src="https://i.ibb.co/YTjX6DCr/IMG-6434.jpg"
+          alt="ذكرياتنا"
+        >
+
+        <img
+          src="https://i.ibb.co/SDXX3h21/IMG-6433.jpg"
+          alt="ذكرياتنا"
+        >
+
+        <img
+          src="https://i.ibb.co/FkZMVnqh/IMG-6435.jpg"
+          alt="ذكرياتنا"
+        >
+
+        <img
+          src="https://i.ibb.co/HfWsyYWQ/IMG-6436.jpg"
+          alt="ذكرياتنا"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- الرسالة -->
+    <section>
+
+      <div class="message">
+
+        <p>
+          لو فتحتِ الموقع ده في يوم،
+          افتكري إن كان فيه شخص
+          نفسه يسيبلك ذكرى حلوة...
+          <br><br>
+
+          مش عشان يطلب منك حاجة،
+          ولا عشان يرجع الزمن،
+          بس عشان يقولك:
+          <br><br>
+
+          <strong>
+            خليكي فاكرة إنك كنتي يومًا
+            سبب في ابتسامة حد. ❤️
+          </strong>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      صُممت بحب ❤️
       <br>
+      خليني ذكرى جميلة عندك
+    </footer>
 
-      بس وجودك في حياتي خلّى لكل حاجة معنى تاني.
+  </div>
 
-      <br><br>
 
-      كل صورة هنا بتفكرني بلحظة حلوة،
+  <script>
 
-      وكل لحظة معاكي نفسي تفضل مكملة.
+    function unlock() {
 
-      <br><br>
+      const password =
+        document.getElementById("password").value;
 
-      ربنا يخليكي ليا دايمًا 🤍
+      if (password === "1234") {
 
-    </div>
+        document.getElementById("lock").style.display = "none";
 
-  </section>
+        document.getElementById("site").style.display = "block";
 
+        const music =
+          document.getElementById("music");
 
-  <!-- الصور -->
+        music.volume = 0.8;
 
-  <section>
+        music.play().catch(function() {
+          console.log("اضغط على الشاشة لتشغيل الأغنية");
+        });
 
-    <h2 class="title">
-      ذكرياتنا 📸
-    </h2>
+        createHearts();
 
-    <div class="gallery">
+      } else {
 
+        alert("الباسورد غلط ❤️");
 
-      <!-- الصورة الأولى -->
+      }
 
-      <img
-        id="img1"
-        src="https://i.ibb.co/YTjX6DCr/IMG-6434.jpg"
-        alt="صورة 1"
-      >
+    }
 
 
-      <!-- الصورة الثانية -->
+    // تشغيل الأغنية عند أول لمسة لو المتصفح منع التشغيل
+    document.addEventListener("click", function() {
 
-      <img
-        id="img2"
-        src="https://i.ibb.co/SDXX3h21/IMG-6433.jpg"
-        alt="صورة 2"
-      >
+      const music =
+        document.getElementById("music");
 
-
-      <!-- الصورة الثالثة -->
-
-      <img
-        id="img3"
-        src="https://i.ibb.co/FkZMVnqh/IMG-6435.jpg"
-        alt="صورة 3"
-      >
-
-
-      <!-- الصورة الرابعة -->
-
-      <img
-        id="img4"
-        src="https://i.ibb.co/HfWsyYWQ/IMG-6436.jpg"
-        alt="صورة 4"
-      >
-
-    </div>
-
-  </section>
-
-
-  <footer>
-
-    Made with love 🤍
-
-  </footer>
-
-
-</div>
-
-
-<script>
-
-
-/* الباسورد */
-
-function unlock(){
-
-  const password =
-    document.getElementById("password").value;
-
-
-  if(password === "1234"){
-
-    document.getElementById("lock").style.display="none";
-
-    document.getElementById("site").style.display="block";
-
-    startHearts();
-
-  }
-
-  else{
-
-    document.getElementById("error").style.display="block";
-
-  }
-
-}
-
-
-/* القلوب */
-
-function createHeart(){
-
-  const heart =
-    document.createElement("div");
-
-  heart.className="heart";
-
-  heart.innerHTML =
-    Math.random() > .5
-    ? "🤍"
-    : "❤️";
-
-  heart.style.left =
-    Math.random()*100+"vw";
-
-  heart.style.animationDuration =
-    (4+Math.random()*5)+"s";
-
-  heart.style.fontSize =
-    (15+Math.random()*20)+"px";
-
-  document.body.appendChild(heart);
-
-
-  setTimeout(()=>{
-
-    heart.remove();
-
-  },9000);
-
-}
-
-
-function startHearts(){
-
-  setInterval(createHeart,700);
-
-}
-
-
-/* ظهور العناوين */
-
-const observer =
-  new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-      if(entry.isIntersecting){
-
-        entry.target.classList.add("show");
-
+      if (
+        document.getElementById("site").style.display === "block"
+        && music.paused
+      ) {
+        music.play().catch(function(){});
       }
 
     });
 
-  });
 
+    // القلوب المتحركة
+    function createHearts() {
 
-document
-  .querySelectorAll(".title")
-  .forEach(el=>observer.observe(el));
+      setInterval(function() {
 
+        const heart =
+          document.createElement("div");
 
-</script>
+        heart.className = "floating-heart";
+
+        heart.innerHTML = "❤️";
+
+        heart.style.left =
+          Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+          (15 + Math.random() * 25) + "px";
+
+        heart.style.animationDuration =
+          (4 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+          heart.remove();
+        }, 8000);
+
+      }, 700);
+
+    }
+
+  </script>
 
 </body>
-
 </html>
